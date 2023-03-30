@@ -4,8 +4,9 @@ import Button from "@/Components/SideBarComponents/Button";
 import OrganisationPicture from "@/Components/SideBarComponents/OrganisationPicture";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown, faChevronUp, faDashboard, faSliders} from "@fortawesome/free-solid-svg-icons";
+import {Link} from "@inertiajs/react";
 
-export default function SideBar() {
+export default function SideBar({routeName}: { routeName: string}) {
     return (
         <div className="flex flex-col justify-between items-center w-1/4 h-full px-5 py-20 border-r-2 border-background-light-neutral dark:border-background-dark-neutral">
             <div className="flex flex-col gap-5 justify-center items-center">
@@ -16,10 +17,10 @@ export default function SideBar() {
                 </div>
             </div>
             <div className="flex flex-col gap-2 justify-center items-center w-full">
-                <Button icon={faDashboard} text={"Tableau de bord"} selected={true} />
-                <Button icon={faFolder} text={"Dossiers"} selected={false} />
-                <Button icon={faBuilding} text={"Organisation"} selected={false} />
-                <Button icon={faSliders} text={"Paramètres"} selected={false} />
+                <Button icon={faDashboard} text={"Tableau de bord"} selected={routeName == 'dashboard' ?? true} routeName={'dashboard'}  />
+                <Button icon={faFolder} text={"Dossiers"} selected={routeName == 'folder' ?? true} routeName={'folder'} />
+                <Button icon={faBuilding} text={"Organisation"} selected={routeName == 'organization' ?? true} routeName={'organization'} />
+                <Button icon={faSliders} text={"Paramètres"} selected={routeName == 'settings' ?? true} routeName={'settings'} />
             </div>
             <div className="flex flex-row gap-5 justify-center items-center">
                 <OrganisationPicture />
