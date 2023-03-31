@@ -11,7 +11,7 @@ export default function Dashboard({ auth }: PageProps) {
 
             <div className="flex flex-row items-start h-full">
                 <SideBar routeName="dashboard" />
-                <div className="flex flex-col justify-start items-start w-full h-full p-2 md:p-10">
+                <div className="flex flex-col justify-start items-start w-full h-full p-5 md:p-10">
                     <NavBar />
                 </div>
             </div>
