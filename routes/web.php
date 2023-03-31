@@ -26,19 +26,19 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard/Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/folder', function () {
-    return Inertia::render('Folder');
+Route::get('/dashboard/folder', function () {
+    return Inertia::render('Dashboard/Folder');
 })->middleware(['auth', 'verified'])->name('folder');
 
-Route::get('/organization', function () {
-    return Inertia::render('Organization');
+Route::get('/dashboard/organization', function () {
+    return Inertia::render('Dashboard/Organization');
 })->middleware(['auth', 'verified'])->name('organization');
 
-Route::get('/settings', function () {
-    return Inertia::render('Settings');
+Route::get('/dashboard/settings', function () {
+    return Inertia::render('Dashboard/Settings');
 })->middleware(['auth', 'verified'])->name('settings');
 
 Route::middleware('auth')->group(function () {
