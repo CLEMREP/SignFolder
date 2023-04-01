@@ -22,6 +22,20 @@ module.exports = {
                     darker: '#091A7A',
                     dark: '#1939B7',
                 },
+                success: {
+                    main: '#36B37E',
+                    lighter: '#D8FBDE',
+                    light: '#86E8AB',
+                    darker: '#0A5554',
+                    dark: '#1B806A',
+                },
+                warning: {
+                    main: '#FFAB00',
+                    lighter: '#FFF5CC',
+                    light: '#FFD666',
+                    darker: '#7A4100',
+                    dark: '#B76E00',
+                },
                 error: {
                     main: '#FF5630',
                     lighter: '#FFE9D5',

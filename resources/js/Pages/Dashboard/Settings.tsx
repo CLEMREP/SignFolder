@@ -10,13 +10,13 @@ export default function Settings({ auth }: PageProps) {
             <Head title="Settings" />
 
             <div className="flex flex-row items-start h-full">
-                <SideBar routeName="settings" />
+                <SideBar routeName="dashboard_settings" />
                 <div className="flex flex-col justify-start items-start w-full h-full p-5 md:p-10">
                     <NavBar />
                 </div>
             </div>
 
-            <BurgerButton routeName="settings" />
+            <BurgerButton routeName="dashboard_settings" />
         </AuthenticatedLayout>
     );
 }

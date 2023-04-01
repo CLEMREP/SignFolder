@@ -31,15 +31,15 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard/folder', function () {
     return Inertia::render('Dashboard/Folder');
-})->middleware(['auth', 'verified'])->name('folder');
+})->middleware(['auth', 'verified'])->name('dashboard_folder');
 
 Route::get('/dashboard/organization', function () {
     return Inertia::render('Dashboard/Organization');
-})->middleware(['auth', 'verified'])->name('organization');
+})->middleware(['auth', 'verified'])->name('dashboard_organization');
 
 Route::get('/dashboard/settings', function () {
     return Inertia::render('Dashboard/Settings');
-})->middleware(['auth', 'verified'])->name('settings');
+})->middleware(['auth', 'verified'])->name('dashboard_settings');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

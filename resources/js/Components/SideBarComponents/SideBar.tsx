@@ -10,9 +10,9 @@ export default function SideBar({routeName}: { routeName: string}) {
             <ProfileInformations />
             <div className="flex flex-col gap-2 justify-center items-center w-full">
                 <Button icon={faDashboard} text={"Tableau de bord"} selected={routeName == 'dashboard' ?? true} routeName={'dashboard'}  />
-                <Button icon={faFolder} text={"Dossiers"} selected={routeName == 'folder' ?? true} routeName={'folder'} />
-                <Button icon={faBuilding} text={"Organisation"} selected={routeName == 'organization' ?? true} routeName={'organization'} />
-                <Button icon={faSliders} text={"Paramètres"} selected={routeName == 'settings' ?? true} routeName={'settings'} />
+                <Button icon={faFolder} text={"Dossiers"} selected={routeName == 'dashboard_folder' ?? true} routeName={'dashboard_folder'} />
+                <Button icon={faBuilding} text={"Organisation"} selected={routeName == 'dashboard_organization' ?? true} routeName={'dashboard_organization'} />
+                <Button icon={faSliders} text={"Paramètres"} selected={routeName == 'dashboard_settings' ?? true} routeName={'dashboard_settings'} />
             </div>
             <OrganizationSelect />
         </div>

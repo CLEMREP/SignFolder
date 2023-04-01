@@ -10,13 +10,13 @@ export default function Organization({ auth }: PageProps) {
             <Head title="Organization" />
 
             <div className="flex flex-row items-start h-full">
-                <SideBar routeName="organization" />
+                <SideBar routeName="dashboard_organization" />
                 <div className="flex flex-col justify-start items-start w-full h-full p-5 md:p-10">
                     <NavBar />
                 </div>
             </div>
 
-            <BurgerButton routeName="organization" />
+            <BurgerButton routeName="dashboard_organization" />
         </AuthenticatedLayout>
     );
 }
