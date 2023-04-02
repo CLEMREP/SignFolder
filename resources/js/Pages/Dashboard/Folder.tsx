@@ -17,7 +17,7 @@ export default function Folder({ auth }: PageProps) {
                 <SideBar routeName="dashboard_folder" />
                 <div className="flex flex-col justify-start items-start w-full h-full p-5 md:p-10 gap-10">
                     <NavBar />
-                    <div className="flex flex-col justify-start items-start w-full h-full gap-10">
+                    <div className="flex flex-col justify-start items-start w-full h-full gap-10 overflow-auto">
                         <h2 className="text-text-light-primary dark:text-text-dark-primary text-xl md:text-2xl font-bold">Dossiers</h2>
                         <Table />
                     </div>

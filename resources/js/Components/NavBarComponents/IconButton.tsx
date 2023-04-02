@@ -1,4 +1,5 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {changeThemeMode} from "@/Components/Services/theme";
 
 export default function IconButton({icon, notified}: { icon: any, notified: boolean }) {
     if(notified) {

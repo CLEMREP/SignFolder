@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faEllipsisV} from "@fortawesome/free-solid-svg-icons";
 import StatusButton from "@/Components/TableComponents/StatusButton";
 
-export default function BodyRow() {
+export default function Row() {
     return (
         <div className="flex flex-row justify-center items-center w-full p-5">
             <span className="text-text-light-secondary dark:text-text-dark-secondary w-full text-left">N°ACD65GF</span>
