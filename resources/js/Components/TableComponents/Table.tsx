@@ -1,9 +1,8 @@
 import Select from "@/Components/TableComponents/Select";
-import {faChevronLeft, faChevronRight} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import Header from "@/Components/TableComponents/Header";
 import SearchBar from "@/Components/TableComponents/SearchBar";
 import Body from "@/Components/TableComponents/Body/Body";
+import Icons from "@/Components/Icons";
 
 export default function Table() {
     return (
@@ -18,8 +17,8 @@ export default function Table() {
             </div>
             <div className="flex flex-row justify-end items-center w-full p-5 gap-5 border-t-2 border-background-light-neutral dark:border-background-dark-neutral">
                 <span className="text-text-light-disabled dark:text-text-dark-secondary">1/5</span>
-                <FontAwesomeIcon className="text-text-light-disabled dark:text-text-dark-disabled text-sm" icon={faChevronLeft} />
-                <FontAwesomeIcon className="text-text-light-secondary dark:text-text-dark-secondary text-sm" icon={faChevronRight} />
+                <Icons className={"fill-text-light-disabled dark:fill-text-dark-disabled"} iconName={'chevronLeft'} />
+                <Icons className={"fill-text-light-secondary dark:fill-text-dark-secondary"} iconName={'chevronRight'} />
             </div>
         </div>
     );

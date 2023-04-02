@@ -3,7 +3,7 @@ import { Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import NavBar from "@/Components/NavBarComponents/NavBar";
 import SideBar from "@/Components/SideBarComponents/SideBar";
-import BurgerButton from "@/Components/BottomNavBarComponents/BurgerButton";
+import BottomNavBar from "@/Components/BottomNavBarComponents/BottomNavBar";
 export default function Organization({ auth }: PageProps) {
     return (
         <AuthenticatedLayout user={auth.user} >
@@ -16,7 +16,7 @@ export default function Organization({ auth }: PageProps) {
                 </div>
             </div>
 
-            <BurgerButton routeName="dashboard_organization" />
+            <BottomNavBar routeName="dashboard_organization" />
         </AuthenticatedLayout>
     );
 }

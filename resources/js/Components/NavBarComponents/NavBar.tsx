@@ -12,8 +12,8 @@ export default function NavBar() {
             <div className="flex flex-row gap-5 justify-center items-center">
                 <div className="flex flex-row justify-center items-center gap-5 text-primary-main text-xl">
                     <DarkModeIconButton />
-                    <IconButton icon={faMessage} notified={true} />
-                    <IconButton icon={faBell} notified={true} />
+                    <IconButton iconName={'comment'} notified={true} />
+                    <IconButton iconName={'bell'} notified={true} />
                 </div>
                 <ProfilePicture />
             </div>

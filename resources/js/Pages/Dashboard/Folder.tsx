@@ -3,7 +3,7 @@ import { Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import NavBar from "@/Components/NavBarComponents/NavBar";
 import SideBar from "@/Components/SideBarComponents/SideBar";
-import BurgerButton from "@/Components/BottomNavBarComponents/BurgerButton";
+import BottomNavBar from "@/Components/BottomNavBarComponents/BottomNavBar";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import Select from "@/Components/TableComponents/Select";
@@ -24,7 +24,7 @@ export default function Folder({ auth }: PageProps) {
                 </div>
             </div>
 
-            <BurgerButton routeName="dashboard_folder" />
+            <BottomNavBar routeName="dashboard_folder" />
         </AuthenticatedLayout>
     );
 }

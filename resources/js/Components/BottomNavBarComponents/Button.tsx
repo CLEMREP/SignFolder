@@ -1,13 +1,14 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "@inertiajs/react";
+import Icons from "@/Components/Icons";
 
-export default function Button({icon, text, selected, routeName}: { icon: any, text: string, selected: boolean, routeName: string }) {
+export default function Button({iconName, text, selected, routeName}: { iconName: string, text: string, selected: boolean, routeName: string }) {
     return (
         <Link
             href={route(routeName)}
             className="flex flex-col justify-center items-center gap-2"
         >
-            <FontAwesomeIcon className={`text-2xl font-semibold ${selected ? 'text-text-dark-primary' : 'text-text-dark-secondary'}`} icon={icon} />
+            <Icons className={`${selected ? 'fill-text-dark-primary' : 'fill-text-dark-secondary'}`} iconName={iconName} />
             <div className={`w-1 h-1 rounded-full ${selected ? 'bg-text-dark-primary' : 'bg-transparent'}`}></div>
         </Link>
     );

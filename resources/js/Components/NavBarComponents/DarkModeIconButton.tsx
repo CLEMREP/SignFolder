@@ -1,8 +1,8 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {changeThemeMode} from "@/Components/Services/theme";
 import {faMoon, faSun} from "@fortawesome/free-regular-svg-icons";
 import {faTv} from "@fortawesome/free-solid-svg-icons";
 import {useState} from "react";
+import Icons from "@/Components/Icons";
 
 export default function DarkModeIconButton() {
     let themeMode: string;
@@ -22,9 +22,9 @@ export default function DarkModeIconButton() {
     }
 
     return (
-        <FontAwesomeIcon className="text-primary-main text-xl cursor-pointer" icon={
-            themeMode === "dark" ? faMoon :
-            themeMode === "light" ? faSun : faTv
+        <Icons className="fill-primary-main cursor-pointer" iconName={
+            themeMode === "dark" ? 'moon' :
+                themeMode === "light" ? 'bright' : 'system'
         } onClick={changeIconMode} />
     );
 }
