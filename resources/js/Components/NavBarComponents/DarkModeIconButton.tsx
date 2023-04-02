@@ -10,14 +10,15 @@ export default function DarkModeIconButton() {
     [themeMode, setThemeMode] = useState(localStorage.theme);
 
     const changeIconMode = () => {
-        if(themeMode === "dark") {
-            setThemeMode("light");
-        } else if (themeMode === "light") {
-            setThemeMode(undefined);
-        } else {
-            setThemeMode("dark");
-        }
         changeThemeMode();
+        let theme = localStorage.theme;
+        if(theme === "dark") {
+            setThemeMode("dark");
+        } else if (theme === "light") {
+            setThemeMode('light');
+        } else {
+            setThemeMode(undefined);
+        }
     }
 
     return (

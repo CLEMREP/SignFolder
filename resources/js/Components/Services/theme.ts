@@ -18,6 +18,7 @@ export const changeThemeMode = () => {
     } else {
         toDarkMode();
     }
+    //alert(localStorage.theme)
 }
 
 function toDarkMode() {
@@ -31,16 +32,21 @@ function toLightMode() {
 }
 
 function toSystemMode() {
+    document.documentElement.classList.remove('dark');
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDark) {
+        toDarkMode();
+    } else {
+        toLightMode();
+    }
     localStorage.removeItem('theme');
 }
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
     const newIsDark = e.matches;
-    if (localStorage.theme === undefined) {
-        if (newIsDark) {
-            toDarkMode();
-        } else {
-            toLightMode();
-        }
+    if (newIsDark) {
+        toDarkMode();
+    } else {
+        toLightMode();
     }
 });

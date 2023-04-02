@@ -8,6 +8,9 @@ export default function Body() {
             <Row />
             <Row />
             <Row />
+            <Row />
+            <Row />
+            <Row />
         </div>
     );
 }
