@@ -2,6 +2,7 @@ import ProfilePicture from "@/Components/NavBarComponents/ProfilePicture";
 import {faBell, faMessage, faMoon} from "@fortawesome/free-regular-svg-icons";
 import IconButton from "@/Components/NavBarComponents/IconButton";
 import DarkModeIconButton from "@/Components/NavBarComponents/DarkModeIconButton";
+import {Link} from "@inertiajs/react";
 
 
 
@@ -15,7 +16,7 @@ export default function NavBar() {
                     <IconButton iconName={'comment'} notified={true} />
                     <IconButton iconName={'bell'} notified={true} />
                 </div>
-                <ProfilePicture />
+                <ProfilePicture/>
             </div>
         </div>
     );

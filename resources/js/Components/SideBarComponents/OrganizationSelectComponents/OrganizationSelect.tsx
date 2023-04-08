@@ -10,8 +10,8 @@ export default function OrganizationSelect() {
                 <h1 className="text-text-light-disabled dark:text-text-dark-disabled text-sm font-semibold">Banque</h1>
             </div>
             <div className="flex flex-col justify-center items-center">
-                <Icons className={"fill-text-light-primary dark:fill-text-dark-primary"} iconName={'chevronUp'} />
-                <Icons className={"fill-text-light-primary dark:fill-text-dark-primary"} iconName={'chevronDown'} />
+                <Icons className={"fill-text-light-primary dark:fill-text-dark-primary"} iconName={'chevronUp'} size={15} />
+                <Icons className={"fill-text-light-primary dark:fill-text-dark-primary"} iconName={'chevronDown'} size={15} />
             </div>
         </div>
     );

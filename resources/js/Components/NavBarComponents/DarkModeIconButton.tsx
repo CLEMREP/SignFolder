@@ -25,6 +25,6 @@ export default function DarkModeIconButton() {
         <Icons className="fill-primary-main cursor-pointer" iconName={
             themeMode === "dark" ? 'moon' :
                 themeMode === "light" ? 'bright' : 'system'
-        } onClick={changeIconMode} />
+        } size={30} onClick={changeIconMode} />
     );
 }

@@ -17,8 +17,8 @@ export default function Table() {
             </div>
             <div className="flex flex-row justify-end items-center w-full p-5 gap-5 border-t-2 border-background-light-neutral dark:border-background-dark-neutral">
                 <span className="text-text-light-disabled dark:text-text-dark-secondary text-sm md:text-base">1/5</span>
-                <Icons className={"fill-text-light-disabled dark:fill-text-dark-disabled"} iconName={'chevronLeft'} />
-                <Icons className={"fill-text-light-secondary dark:fill-text-dark-secondary"} iconName={'chevronRight'} />
+                <Icons className={"fill-text-light-disabled dark:fill-text-dark-disabled"} iconName={'chevronLeft'} size={15} />
+                <Icons className={"fill-text-light-secondary dark:fill-text-dark-secondary"} iconName={'chevronRight'} size={15} />
             </div>
         </div>
     );

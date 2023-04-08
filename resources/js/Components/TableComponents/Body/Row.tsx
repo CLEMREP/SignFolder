@@ -10,7 +10,7 @@ export default function Row() {
             <div className="text-text-light-secondary dark:text-text-dark-secondary w-full">
                 <StatusButton status={0} />
             </div>
-            <Icons className={"fill-text-light-secondary dark:fill-text-dark-secondary w-1/12 text-right cursor-pointer"} iconName={'dotMenu'} />
+            <Icons className={"fill-text-light-secondary dark:fill-text-dark-secondary w-1/12 text-right cursor-pointer"} iconName={'dotMenu'} size={30} />
         </div>
     );
 }
