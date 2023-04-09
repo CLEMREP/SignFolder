@@ -1,8 +1,8 @@
-import Step from "@/Components/EditorFolderComponents/Step";
+import Step from "@/Components/EditorFolderComponents/StepListComponents/Step";
 import {useState} from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
-import NewStep from "@/Components/EditorFolderComponents/AddStep";
-import AddStep from "@/Components/EditorFolderComponents/AddStep";
+import NewStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
+import AddStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
 
 export default function StepList() {
     const defaultList = [
@@ -52,7 +52,7 @@ export default function StepList() {
     }
 
     return (
-        <div className="flex flex-col justify-start items-start w-1/3 h-full gap-2 border-r-2 border-background-light-neutral dark:border-background-dark-neutral">
+        <div className="flex flex-col justify-start items-start w-1/4 h-full gap-2 border-r-2 border-background-light-neutral dark:border-background-dark-neutral">
             <div className="px-5 pt-5 w-full">
                 <AddStep onClick={() => addStep()} />
             </div>

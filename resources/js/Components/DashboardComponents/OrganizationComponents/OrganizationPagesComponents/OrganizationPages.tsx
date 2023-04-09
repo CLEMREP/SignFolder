@@ -12,7 +12,7 @@ export default function OrganizationPages() {
     }
 
     return (
-        <div className="flex flex-col justify-start items-start w-full h-full gap-10 overflow-hidden">
+        <div className="flex flex-col justify-start items-start w-full h-full gap-10 overflow-auto mb-16 md:mb-0">
             <NavBar pageSelected={(page: number) => changePage(page)} />
             {
                 page === 0 ?
