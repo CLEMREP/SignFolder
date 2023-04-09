@@ -1,7 +1,7 @@
-import Select from "@/Components/TableComponents/Select";
-import Header from "@/Components/TableComponents/Header";
-import SearchBar from "@/Components/TableComponents/SearchBar";
-import Body from "@/Components/TableComponents/Body/Body";
+import Select from "@/Components/DashboardComponents/TableComponents/Select";
+import Header from "@/Components/DashboardComponents/TableComponents/Header";
+import SearchBar from "@/Components/DashboardComponents/TableComponents/SearchBar";
+import Body from "@/Components/DashboardComponents/TableComponents/Body/Body";
 import Icons from "@/Components/Icons";
 
 export default function Table() {

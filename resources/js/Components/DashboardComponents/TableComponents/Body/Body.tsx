@@ -1,4 +1,4 @@
-import Row from "@/Components/TableComponents/Body/Row";
+import Row from "@/Components/DashboardComponents/TableComponents/Body/Row";
 
 export default function Body() {
     return (

@@ -1,8 +1,8 @@
 import {faBuilding, faFolder} from "@fortawesome/free-regular-svg-icons";
-import Button from "@/Components/SideBarComponents/Button";
+import Button from "@/Components/DashboardComponents/SideBarComponents/Button";
 import {faDashboard, faSliders} from "@fortawesome/free-solid-svg-icons";
-import OrganizationSelect from "@/Components/SideBarComponents/OrganizationSelectComponents/OrganizationSelect";
-import ProfileInformations from "@/Components/SideBarComponents/ProfileInformationsComponents/ProfileInformations";
+import OrganizationSelect from "@/Components/DashboardComponents/SideBarComponents/OrganizationSelectComponents/OrganizationSelect";
+import ProfileInformations from "@/Components/DashboardComponents/SideBarComponents/ProfileInformationsComponents/ProfileInformations";
 
 export default function SideBar({routeName}: { routeName: string}) {
     return (

@@ -1,4 +1,4 @@
-import StatusButton from "@/Components/TableComponents/StatusButton";
+import StatusButton from "@/Components/DashboardComponents/TableComponents/StatusButton";
 import Icons from "@/Components/Icons";
 
 export default function Row() {

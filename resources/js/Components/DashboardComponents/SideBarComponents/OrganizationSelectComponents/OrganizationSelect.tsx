@@ -1,4 +1,4 @@
-import Picture from "@/Components/SideBarComponents/OrganizationSelectComponents/Picture";
+import Picture from "@/Components/DashboardComponents/SideBarComponents/OrganizationSelectComponents/Picture";
 import Icons from "@/Components/Icons";
 
 export default function OrganizationSelect() {

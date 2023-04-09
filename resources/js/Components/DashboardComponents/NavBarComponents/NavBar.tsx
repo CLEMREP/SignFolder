@@ -1,7 +1,7 @@
-import ProfilePicture from "@/Components/NavBarComponents/ProfilePicture";
+import ProfilePicture from "@/Components/DashboardComponents/NavBarComponents/ProfilePicture";
 import {faBell, faMessage, faMoon} from "@fortawesome/free-regular-svg-icons";
-import IconButton from "@/Components/NavBarComponents/IconButton";
-import DarkModeIconButton from "@/Components/NavBarComponents/DarkModeIconButton";
+import IconButton from "@/Components/DashboardComponents/NavBarComponents/IconButton";
+import DarkModeIconButton from "@/Components/DashboardComponents/NavBarComponents/DarkModeIconButton";
 import {Link} from "@inertiajs/react";
 
 

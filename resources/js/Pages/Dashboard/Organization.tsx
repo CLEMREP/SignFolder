@@ -1,9 +1,9 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
-import NavBar from "@/Components/NavBarComponents/NavBar";
-import SideBar from "@/Components/SideBarComponents/SideBar";
-import BottomNavBar from "@/Components/BottomNavBarComponents/BottomNavBar";
+import NavBar from "@/Components/DashboardComponents/NavBarComponents/NavBar";
+import SideBar from "@/Components/DashboardComponents/SideBarComponents/SideBar";
+import BottomNavBar from "@/Components/DashboardComponents/BottomNavBarComponents/BottomNavBar";
 export default function Organization({ auth }: PageProps) {
     return (
         <AuthenticatedLayout user={auth.user} >

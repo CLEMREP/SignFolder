@@ -41,6 +41,10 @@ Route::get('/dashboard/settings', function () {
     return Inertia::render('Dashboard/Settings');
 })->middleware(['auth', 'verified'])->name('dashboard_settings');
 
+Route::get('/editor/folder', function () {
+    return Inertia::render('Editor/Folder');
+})->middleware(['auth', 'verified'])->name('editor_folder');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

@@ -1,4 +1,4 @@
-import Picture from "@/Components/SideBarComponents/ProfileInformationsComponents/Picture";
+import Picture from "@/Components/DashboardComponents/SideBarComponents/ProfileInformationsComponents/Picture";
 
 export default function ProfileInformations() {
     return (

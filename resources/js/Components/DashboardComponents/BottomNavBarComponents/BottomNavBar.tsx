@@ -1,4 +1,4 @@
-import Button from "@/Components/BottomNavBarComponents/Button";
+import Button from "@/Components/DashboardComponents/BottomNavBarComponents/Button";
 
 export default function BottomNavBar({routeName}: { routeName: string}) {
     return (
