@@ -9,14 +9,17 @@ export default function StepList() {
         {
             id: '0',
             name: 'A',
+            type: 0,
         },
         {
             id: '1',
             name: 'B',
+            type: 1,
         },
         {
             id: '2',
             name: 'C',
+            type: 2,
         },
     ];
 
@@ -39,9 +42,13 @@ export default function StepList() {
     const [selected, setSelected] = useState('0');
 
     const addStep = () => {
-        //setItemList([...itemList, {id: itemList.length.toString(), name: 'D'}]);
-        setItemList([{id: itemList.length.toString(), name: 'Nouvelle étape'}, ...itemList]);
+        //setItemList([...itemList, {id: itemList.length.toString(), name: 'D', , type: 0}]);
+        setItemList([{id: itemList.length.toString(), name: 'Nouvelle étape', type: 0}, ...itemList]);
         setSelected(itemList.length.toString());
+    }
+
+    const deleteStep = (id: string) => {
+        setItemList(itemList.filter(item => item.id !== id));
     }
 
     return (
@@ -67,7 +74,7 @@ export default function StepList() {
                                             {...provided.dragHandleProps}
                                             {...provided.draggableProps}
                                         >
-                                            <Step id={item.id} iconName={'folder'} text={item.name} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} />
+                                            <Step id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => deleteStep(item.id)} />
                                         </div>
                                     )}
                                 </Draggable>

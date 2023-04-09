@@ -14,7 +14,7 @@ export default function Folder({ auth }: PageProps) {
             <div className="flex flex-row items-start h-full">
                 <SideBar routeName="dashboard_folder" />
                 <div className="flex flex-col justify-start items-start w-full h-full p-5 md:p-10 gap-10">
-                    <NavBar />
+                    <NavBar title={'Tableau de bord'} />
                     <div className="flex flex-col justify-start items-start w-full h-full gap-10 overflow-hidden drop-shadow-lg">
                         <div className="flex flex-row justify-between items-center w-full">
                             <h2 className="text-text-light-primary dark:text-text-dark-primary text-xl md:text-2xl font-bold">Dossiers</h2>

@@ -12,11 +12,14 @@ export default function Folder({ auth }: PageProps) {
         <AuthenticatedLayout user={auth.user} >
             <Head title="Folder" />
 
-            <div className="flex flex-row items-start h-full">
-                <StepList />
+            <div className="flex flex-col h-full">
+                <div className="flex flex-row px-10 py-5">
+                    <NavBar title={'Editeur de dossier'} />
+                </div>
+                <div className="flex flex-row items-start h-full overflow-auto">
+                    <StepList />
+                </div>
             </div>
-
-            <BottomNavBar routeName="dashboard_folder" />
         </AuthenticatedLayout>
     );
 }
