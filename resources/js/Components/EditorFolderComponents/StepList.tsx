@@ -5,7 +5,20 @@ import NewStep from "@/Components/EditorFolderComponents/AddStep";
 import AddStep from "@/Components/EditorFolderComponents/AddStep";
 
 export default function StepList() {
-    const defaultList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    const defaultList = [
+        {
+            id: '0',
+            name: 'A',
+        },
+        {
+            id: '1',
+            name: 'B',
+        },
+        {
+            id: '2',
+            name: 'C',
+        },
+    ];
 
     const [itemList, setItemList] = useState(defaultList);
 
@@ -23,21 +36,29 @@ export default function StepList() {
         setItemList(updatedList);
     };
 
-    const [selected, setSelected] = useState('A');
+    const [selected, setSelected] = useState('0');
+
+    const addStep = () => {
+        //setItemList([...itemList, {id: itemList.length.toString(), name: 'D'}]);
+        setItemList([{id: itemList.length.toString(), name: 'Nouvelle étape'}, ...itemList]);
+        setSelected(itemList.length.toString());
+    }
 
     return (
-        <div className="flex flex-col justify-start items-start w-1/3 h-full gap-2 px-5 py-5 border-r-2 border-background-light-neutral dark:border-background-dark-neutral">
-            <AddStep onClick={() => alert('ok')} />
+        <div className="flex flex-col justify-start items-start w-1/3 h-full gap-2 border-r-2 border-background-light-neutral dark:border-background-dark-neutral">
+            <div className="px-5 pt-5 w-full">
+                <AddStep onClick={() => addStep()} />
+            </div>
             <DragDropContext onDragEnd={handleDrop}>
-                <Droppable droppableId="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto">
+                <Droppable droppableId="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto px-5 py-5">
                     {(provided) => (
                         <div
-                            className="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto"
+                            className="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto px-5 py-5"
                             {...provided.droppableProps}
                             ref={provided.innerRef}
                         >
                             {itemList.map((item, index) => (
-                                <Draggable key={item} draggableId={item} index={index}>
+                                <Draggable key={item.id} draggableId={item.id} index={index}>
                                     {(provided) => (
                                         console.log(provided.dragHandleProps?.draggable),
                                         <div
@@ -46,7 +67,7 @@ export default function StepList() {
                                             {...provided.dragHandleProps}
                                             {...provided.draggableProps}
                                         >
-                                            <Step iconName={'folder'} text={`Etape ${item}`} selected={item === selected} onClick={() => setSelected(item)} />
+                                            <Step id={item.id} iconName={'folder'} text={item.name} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} />
                                         </div>
                                     )}
                                 </Draggable>
