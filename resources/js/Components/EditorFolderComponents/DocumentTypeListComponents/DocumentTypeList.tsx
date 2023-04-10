@@ -6,7 +6,7 @@ import AddStep from "@/Components/EditorFolderComponents/StepListComponents/AddS
 import DocumentType from "@/Components/EditorFolderComponents/DocumentTypeListComponents/DocumentType";
 import SearchBar from "@/Components/EditorFolderComponents/DocumentTypeListComponents/SearchBar";
 
-export default function DocumentTypeList() {
+export default function DocumentTypeList({ onClick }: {onClick: any}) {
     const defaultList = [
         {
             id: '0',
@@ -55,37 +55,37 @@ export default function DocumentTypeList() {
 
     return (
         <div className="flex flex-col justify-start items-start w-1/4 h-full gap-2 border-l-2 border-background-light-neutral dark:border-background-dark-neutral p-2">
-            <div className="flex flex-col justify-start items-start w-full h-full gap-7 overflow-auto px-5 py-5 bg-background-light-paper dark:bg-background-dark-paper rounded-xl drop-shadow-lg">
+            <div className="flex flex-col justify-start items-start w-full h-full gap-7 px-5 py-5 bg-background-light-paper dark:bg-background-dark-paper rounded-xl drop-shadow-lg overflow-auto">
                 <div className="flex flex-col justify-center items-start w-full gap-3">
                     <h3 className="text-text-light-primary dark:text-text-dark-primary text-lg font-bold">Type de documents</h3>
                     <SearchBar />
                 </div>
-                <div className="flex flex-col justify-center items-center w-full gap-5 overflow-auto">
+
+                <div className="flex flex-col justify-center items-center w-full gap-5">
                     <div className="flex flex-col justify-center items-start w-full gap-3">
                         <p className="text-text-light-primary dark:text-text-dark-primary text-sm font-bold">Text :</p>
                         <div className="flex flex-col justify-center items-start w-full gap-2">
-                            <DocumentType type={'text'} />
-                            <DocumentType type={'name'} />
-                            <DocumentType type={'email'} />
-                            <DocumentType type={'select'} />
+                            <DocumentType type={'text'} onClick={((type: string) => onClick(type))} />
+                            <DocumentType type={'name'} onClick={((type: string) => onClick(type))} />
+                            <DocumentType type={'email'} onClick={((type: string) => onClick(type))} />
                         </div>
                     </div>
                     <div className="flex flex-col justify-center items-start w-full gap-3">
-                        <p className="text-text-light-primary dark:text-text-dark-primary text-sm font-bold">Text :</p>
+                        <p className="text-text-light-primary dark:text-text-dark-primary text-sm font-bold">Select :</p>
                         <div className="flex flex-col justify-center items-start w-full gap-2">
-                            <DocumentType type={'text'} />
-                            <DocumentType type={'name'} />
-                            <DocumentType type={'email'} />
-                            <DocumentType type={'select'} />
+                            <DocumentType type={'select'} onClick={((type: string) => onClick(type))} />
                         </div>
                     </div>
                     <div className="flex flex-col justify-center items-start w-full gap-3">
-                        <p className="text-text-light-primary dark:text-text-dark-primary text-sm font-bold">Text :</p>
+                        <p className="text-text-light-primary dark:text-text-dark-primary text-sm font-bold">Radio bouton :</p>
                         <div className="flex flex-col justify-center items-start w-full gap-2">
-                            <DocumentType type={'text'} />
-                            <DocumentType type={'name'} />
-                            <DocumentType type={'email'} />
-                            <DocumentType type={'select'} />
+                            <DocumentType type={'select'} onClick={((type: string) => onClick(type))} />
+                        </div>
+                    </div>
+                    <div className="flex flex-col justify-center items-start w-full gap-3">
+                        <p className="text-text-light-primary dark:text-text-dark-primary text-sm font-bold">Checkbox :</p>
+                        <div className="flex flex-col justify-center items-start w-full gap-2">
+                            <DocumentType type={'select'} onClick={((type: string) => onClick(type))} />
                         </div>
                     </div>
                 </div>

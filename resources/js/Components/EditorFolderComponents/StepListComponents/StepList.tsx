@@ -3,8 +3,9 @@ import {useState} from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import NewStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
 import AddStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
+import {v4 as uuidv4} from "uuid";
 
-export default function StepList() {
+export default function StepList({ stepSelected, onSelectStep }: {stepSelected: string, onSelectStep: any}) {
     const defaultList = [
         {
             id: '0',
@@ -39,11 +40,18 @@ export default function StepList() {
         setItemList(updatedList);
     };
 
-    const [selected, setSelected] = useState('0');
+    const [selected, setSelected] = useState(stepSelected);
+
+    const selectStep = (id: string) => {
+        onSelectStep(id);
+        setSelected(id);
+    }
 
     const addStep = () => {
         //setItemList([...itemList, {id: itemList.length.toString(), name: 'D', , type: 0}]);
-        setItemList([{id: itemList.length.toString(), name: 'Nouvelle étape', type: 0}, ...itemList]);
+        //setItemList([...itemList, {id: uuidv4(), name: 'D', , type: 0}]);
+        //setItemList([{id: itemList.length.toString(), name: 'Nouvelle étape', type: 0}, ...itemList]);
+        setItemList([{id: uuidv4(), name: 'Nouvelle étape', type: 0}, ...itemList]);
         setSelected(itemList.length.toString());
     }
 
@@ -74,7 +82,7 @@ export default function StepList() {
                                             {...provided.dragHandleProps}
                                             {...provided.draggableProps}
                                         >
-                                            <Step id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => deleteStep(item.id)} />
+                                            <Step id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => selectStep(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => deleteStep(item.id)} />
                                         </div>
                                     )}
                                 </Draggable>

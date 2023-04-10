@@ -1,31 +1,16 @@
 import Step from "@/Components/EditorFolderComponents/StepListComponents/Step";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import NewStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
 import AddStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
-import DocumentType from "@/Components/EditorFolderComponents/DocumentTypeListComponents/DocumentType";
 import Document from "@/Components/EditorFolderComponents/DocumentListComponents/Document";
 
-export default function DocumentList() {
-    const defaultList = [
-        {
-            id: '0',
-            name: 'A',
-            type: 0,
-        },
-        {
-            id: '1',
-            name: 'B',
-            type: 1,
-        },
-        {
-            id: '2',
-            name: 'C',
-            type: 2,
-        },
-    ];
+export default function DocumentList({items, updateList, onClickDelte}: {items: any[], updateList: any, onClickDelte(id: string): any}) {
+    const [itemList, setItemList] = useState(items);
 
-    const [itemList, setItemList] = useState(defaultList);
+    useEffect(() => {
+        setItemList(items);
+    }, [items]);
 
     // Function to update list on drop
     // @ts-ignore
@@ -39,19 +24,11 @@ export default function DocumentList() {
         updatedList.splice(droppedItem.destination.index, 0, reorderedItem);
         // Update State
         setItemList(updatedList);
+
+        updateList(updatedList);
     };
 
     const [selected, setSelected] = useState('0');
-
-    const addStep = () => {
-        //setItemList([...itemList, {id: itemList.length.toString(), name: 'D', , type: 0}]);
-        setItemList([{id: itemList.length.toString(), name: 'Nouvelle étape', type: 0}, ...itemList]);
-        setSelected(itemList.length.toString());
-    }
-
-    const deleteStep = (id: string) => {
-        setItemList(itemList.filter(item => item.id !== id));
-    }
 
     return (
         <div className="flex flex-col justify-start items-start w-2/4 h-full p-2">
@@ -73,7 +50,7 @@ export default function DocumentList() {
                                                 {...provided.dragHandleProps}
                                                 {...provided.draggableProps}
                                             >
-                                                <Document id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => deleteStep(item.id)} />
+                                                <Document id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: string) => item.type = type} onClickDelete={() => onClickDelte(item.id)} />
                                             </div>
                                     )}
                                 </Draggable>
