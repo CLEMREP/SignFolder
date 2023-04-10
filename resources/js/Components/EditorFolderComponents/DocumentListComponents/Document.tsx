@@ -2,7 +2,7 @@ import {Link} from "@inertiajs/react";
 import Icons from "@/Components/Icons";
 import {useEffect, useState} from "react";
 
-export default function Component({id, index, text, type, selected, onClick, onChange, onClickStepType, onClickDelete}: { id: string, index: number, text: string, type: number, selected: boolean, onClick: any, onChange: any, onClickStepType: any, onClickDelete: any }) {
+export default function Document({id, index, text, type, selected, onClick, onChange, onClickStepType, onClickDelete}: { id: string, index: number, text: string, type: number, selected: boolean, onClick: any, onChange: any, onClickStepType: any, onClickDelete: any }) {
     const [isTextWritten, setIsTextWritten] = useState(false);
 
     const [textState, setTextState] = useState(text);

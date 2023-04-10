@@ -2,12 +2,10 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import NavBar from "@/Components/DashboardComponents/NavBarComponents/NavBar";
-import SideBar from "@/Components/DashboardComponents/SideBarComponents/SideBar";
-import BottomNavBar from "@/Components/DashboardComponents/BottomNavBarComponents/BottomNavBar";
-import Table from "@/Components/DashboardComponents/TableComponents/Table";
-import NewFolderButton from "@/Components/DashboardComponents/NewFolderButton";
 import StepList from "@/Components/EditorFolderComponents/StepListComponents/StepList";
-import ComponentList from "@/Components/EditorFolderComponents/DocumentListComponents/ComponentList";
+import DocumentTypeList from "@/Components/EditorFolderComponents/DocumentTypeListComponents/DocumentTypeList";
+import DocumentList from "@/Components/EditorFolderComponents/DocumentListComponents/DocumentList";
+
 export default function Folder({ auth }: PageProps) {
     return (
         <AuthenticatedLayout user={auth.user} >
@@ -20,7 +18,8 @@ export default function Folder({ auth }: PageProps) {
                 </div>
                 <div className="flex flex-row justify-between items-start h-full overflow-auto">
                     <StepList />
-                    <ComponentList />
+                    <DocumentList />
+                    <DocumentTypeList />
                 </div>
             </div>
         </AuthenticatedLayout>

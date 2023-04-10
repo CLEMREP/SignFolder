@@ -24,7 +24,7 @@ export default function ProfilePicture() {
             <div id="profile-picture-burger-button-owner" className="relative bg-text-light-disabled dark:bg-text-dark-disabled w-10 h-10 rounded-full drop-shadow-lg cursor-pointer" />
             <div className={`absolute flex flex-col ${isVisible ? 'visible' : 'invisible'} z-10 top-11 right-0 bg-background-light-paper dark:bg-background-dark-paper rounded-lg drop-shadow-lg`} >
                 <Link method="post" href={route('logout')} as="button" className="flex flex-row justify-between items-center px-5 py-2 gap-10 hover:bg-primary-main/10 rounded-lg transition-colors duration-150 font-semibold text-sm text-text-light-primary dark:text-text-dark-primary cursor-pointer">
-                    <p>Se déconecter</p>
+                    <p>Déconnexion</p>
                     <Icons className="fill-text-light-primary dark:fill-text-dark-primary" iconName={"logout"} size={20} />
                 </Link>
             </div>

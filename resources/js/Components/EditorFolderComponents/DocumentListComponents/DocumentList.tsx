@@ -3,8 +3,10 @@ import {useState} from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import NewStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
 import AddStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
+import DocumentType from "@/Components/EditorFolderComponents/DocumentTypeListComponents/DocumentType";
+import Document from "@/Components/EditorFolderComponents/DocumentListComponents/Document";
 
-export default function ComponentList() {
+export default function DocumentList() {
     const defaultList = [
         {
             id: '0',
@@ -52,12 +54,12 @@ export default function ComponentList() {
     }
 
     return (
-        <div className="flex flex-col justify-start items-start w-1/4 h-full gap-2 border-l-2 border-background-light-neutral dark:border-background-dark-neutral">
+        <div className="flex flex-col justify-start items-start w-2/4 h-full p-2">
             <DragDropContext onDragEnd={handleDrop}>
-                <Droppable droppableId="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto px-5 py-5">
+                <Droppable droppableId="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto px-5 py-5 bg-background-light-paper dark:bg-background-dark-paper rounded-xl">
                     {(provided) => (
                         <div
-                            className="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto px-5 py-5"
+                            className="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto px-5 py-5 bg-background-light-paper dark:bg-background-dark-paper rounded-xl"
                             {...provided.droppableProps}
                             ref={provided.innerRef}
                         >
@@ -65,14 +67,14 @@ export default function ComponentList() {
                                 <Draggable key={item.id} draggableId={item.id} index={index}>
                                     {(provided) => (
                                         console.log(provided.dragHandleProps?.draggable),
-                                        <div
-                                            className="flex flex-row justify-start items-start w-full"
-                                            ref={provided.innerRef}
-                                            {...provided.dragHandleProps}
-                                            {...provided.draggableProps}
-                                        >
-                                            <Step id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => deleteStep(item.id)} />
-                                        </div>
+                                            <div
+                                                className="flex flex-row justify-start items-start w-full"
+                                                ref={provided.innerRef}
+                                                {...provided.dragHandleProps}
+                                                {...provided.draggableProps}
+                                            >
+                                                <Document id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => setSelected(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => deleteStep(item.id)} />
+                                            </div>
                                     )}
                                 </Draggable>
                             ))}
