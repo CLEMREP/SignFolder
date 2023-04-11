@@ -14,7 +14,7 @@ export default function Folder({ auth }: PageProps) {
 
             <div className="flex flex-col h-full">
                 <div className="flex flex-row px-10 py-5">
-                    <input type="text" className="w-full bg-transparent border-none focus:outline-none focus:ring-0 p-0 text-text-light-primary dark:text-text-dark-primary text-xl md:text-xl font-semibold" defaultValue="Dossier de contrat de travail" />
+                    <input type="text" className="w-full bg-transparent border-none focus:outline-none focus:ring-0 focus:underline focus:underline-offset-4 p-0 text-text-light-primary dark:text-text-dark-primary text-xl md:text-xl font-semibold" defaultValue="Mon-nouveau-template-dossier" />
                     <NavBar title={''} />
                 </div>
                 <EditorFolder />

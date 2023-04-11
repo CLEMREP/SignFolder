@@ -16,7 +16,7 @@ export default function EditorFolder() {
             documents: [
                 {
                     id: '0',
-                    name: 'name',
+                    name: 'Text',
                     type: 'text',
                 }
             ]
@@ -36,9 +36,24 @@ export default function EditorFolder() {
     }
 
     const addDocument = (type: string) => {
+        let name= '';
+        switch (type) {
+            case 'text':
+                name = 'Text';
+                break;
+            case 'name':
+                name = 'Nom';
+                break;
+            case 'email':
+                name = 'Email';
+                break;
+            default:
+                name = 'Text';
+                break;
+        }
         const newDocument = {
             id: uuidv4(),
-            name: 'name',
+            name: name,
             type: type,
         };
         setItemList(itemList.map(step => {

@@ -48,7 +48,7 @@ export default function Step({id, index, text, type, selected, onClick, onChange
     }
 
     return (
-        <div id={`step-${id}`} className={`relative flex flex-row justify-start items-center w-full px-6 py-4 rounded-xl gap-5 font-semibold cursor-pointer drop-shadow-lg ${selected ? 'bg-primary-main text-text-dark-primary dark:text-text-dark-primary' : 'bg-background-light-paper dark:bg-background-dark-paper text-text-light-primary dark:text-text-dark-primary hover:bg-primary-main/30 hover:text-text-dark-primary group transition-colors duration-150'}`} onClick={onClick}>
+        <div id={`step-${id}`} className={`relative flex flex-row justify-start items-center w-full px-6 py-4 rounded-xl gap-5 font-semibold cursor-text drop-shadow-lg ${selected ? 'bg-primary-main text-text-dark-primary dark:text-text-dark-primary' : 'bg-background-light-paper dark:bg-background-dark-paper text-text-light-primary dark:text-text-dark-primary hover:bg-primary-main/30 hover:text-text-dark-primary group transition-colors duration-150'}`} onClick={onClick}>
             <p>{index}</p>
             {
                 isTextWritten ?
