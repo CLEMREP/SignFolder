@@ -1,30 +1,16 @@
 import Step from "@/Components/EditorFolderComponents/StepListComponents/Step";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import NewStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
 import AddStep from "@/Components/EditorFolderComponents/StepListComponents/AddStep";
 import {v4 as uuidv4} from "uuid";
 
-export default function StepList({ stepSelected, onSelectStep }: {stepSelected: string, onSelectStep: any}) {
-    const defaultList = [
-        {
-            id: '0',
-            name: 'A',
-            type: 0,
-        },
-        {
-            id: '1',
-            name: 'B',
-            type: 1,
-        },
-        {
-            id: '2',
-            name: 'C',
-            type: 2,
-        },
-    ];
+export default function StepList({items, updateList, onClick, onClickDelte, stepSelected, onSelected}: {items: any[], updateList: any, onClick: any, onClickDelte(id: string): any, stepSelected: string, onSelected: any}) {
+    const [itemList, setItemList] = useState(items);
 
-    const [itemList, setItemList] = useState(defaultList);
+    useEffect(() => {
+        setItemList(items);
+    }, [items]);
 
     // Function to update list on drop
     // @ts-ignore
@@ -38,31 +24,21 @@ export default function StepList({ stepSelected, onSelectStep }: {stepSelected: 
         updatedList.splice(droppedItem.destination.index, 0, reorderedItem);
         // Update State
         setItemList(updatedList);
+
+        updateList(updatedList);
     };
 
     const [selected, setSelected] = useState(stepSelected);
 
     const selectStep = (id: string) => {
-        onSelectStep(id);
+        onSelected(id);
         setSelected(id);
-    }
-
-    const addStep = () => {
-        //setItemList([...itemList, {id: itemList.length.toString(), name: 'D', , type: 0}]);
-        //setItemList([...itemList, {id: uuidv4(), name: 'D', , type: 0}]);
-        //setItemList([{id: itemList.length.toString(), name: 'Nouvelle étape', type: 0}, ...itemList]);
-        setItemList([{id: uuidv4(), name: 'Nouvelle étape', type: 0}, ...itemList]);
-        setSelected(itemList.length.toString());
-    }
-
-    const deleteStep = (id: string) => {
-        setItemList(itemList.filter(item => item.id !== id));
     }
 
     return (
         <div className="flex flex-col justify-start items-start w-1/4 h-full gap-2 border-r-2 border-background-light-neutral dark:border-background-dark-neutral">
             <div className="px-5 pt-5 w-full">
-                <AddStep onClick={() => addStep()} />
+                <AddStep onClick={() => onClick()} />
             </div>
             <DragDropContext onDragEnd={handleDrop}>
                 <Droppable droppableId="flex flex-col justify-start items-start w-full h-full gap-2 overflow-auto px-5 py-5">
@@ -82,7 +58,7 @@ export default function StepList({ stepSelected, onSelectStep }: {stepSelected: 
                                             {...provided.dragHandleProps}
                                             {...provided.draggableProps}
                                         >
-                                            <Step id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => selectStep(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => deleteStep(item.id)} />
+                                            <Step id={item.id} index={index+1} text={item.name} type={item.type} selected={item.id === selected} onClick={() => selectStep(item.id)} onChange={(e: any) => item.name = e.target.value} onClickStepType={(type: number) => item.type = type} onClickDelete={() => onClickDelte(item.id)} />
                                         </div>
                                     )}
                                 </Draggable>
