@@ -1,21 +1,19 @@
 import StepList from "@/Components/EditorFolderComponents/StepListComponents/StepList";
 import DocumentList from "@/Components/EditorFolderComponents/DocumentListComponents/DocumentList";
 import DocumentTypeList from "@/Components/EditorFolderComponents/DocumentTypeListComponents/DocumentTypeList";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-export default function EditorFolder() {
-
-    const [stepSelected, setStepSelected] = useState('0');
+export default function EditorFolder({onSave}: {onSave?: any}) {
 
     const defaultList = [
         {
-            id: '0',
+            id: uuidv4(),
             name: 'Première étape',
             type: 0,
             documents: [
                 {
-                    id: '0',
+                    id: uuidv4(),
                     name: 'Text',
                     type: 'text',
                 }
@@ -24,6 +22,12 @@ export default function EditorFolder() {
     ];
 
     const [itemList, setItemList] = useState(defaultList);
+
+    const [stepSelected, setStepSelected] = useState(itemList[0].id);
+
+    useEffect(() => {
+        onSave(itemList);
+    }, [itemList]);
 
     const addStep = () => {
         const newStep = {
